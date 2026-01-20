@@ -449,8 +449,7 @@ void MotionCache::reset(
           std::unordered_map<CyclicVecInt<3, 2>, bool, CyclicVecInt<3, 2>> registered;
           registered[d] = true;
 
-          const int total_step = static_cast<int>(std::round(
-              d.len() / (grid_enumeration_resolution / linear_resolution)));
+          const int total_step = static_cast<int>(std::round(d.len() / grid_enumeration_resolution));
           const int interpolation_step = std::max(
               1, static_cast<int>(std::round(
                      interpolation_resolution / grid_enumeration_resolution)));
